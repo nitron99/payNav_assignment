@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/home_card_image"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:src="@mipmap/ic_launcher"/>
+
+
+    <TextView
+        android:id="@+id/home_card_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="test"
+        android:textSize="11sp"
+        android:textAlignment="center"
+        android:layout_marginTop="5sp"
+        android:layout_marginBottom="25dp"/>
+
+</LinearLayout>

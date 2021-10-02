@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/app_blue"
+    tools:context=".Activities.UserDetailActivity">
+
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/user_toolbar"/>
+
+    <RelativeLayout
+        android:id="@+id/name_column"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/leftpadding"
+        android:paddingEnd="@dimen/rightpadding"
+        android:layout_marginBottom="40dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerVertical="true">
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/app_white_light"
+                android:textSize="25sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/user_upiID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="reachjaysethu-1@oksbi"
+                android:textColor="@color/app_white_light"
+                android:textSize="15sp"
+                android:alpha="0.5"
+                android:layout_below="@+id/user_name"/>
+
+        </LinearLayout>
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_photo"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_alignParentEnd="true"
+            android:src="@mipmap/am" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/transaction_btn"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/user_btn_layout"
+            android:elevation="1dp"
+            android:text="TRANSACTION"
+            android:textColor="@color/user_btn_white" />
+
+        <Button
+            android:id="@+id/message_btn"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_margin="15dp"
+            android:text="MESSAGE"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/user_btn_layout"
+            android:elevation="1dp"
+            android:textColor="@color/user_btn_white"/>
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bottomsheet_shape_expanded">
+
+        <LinearLayout
+            android:id="@+id/money_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.5"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="15dp"
+                    android:text="YOUR RELATIONSHIP"
+                    android:textColor="@color/app_black"
+                    android:textSize="12sp" />
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/total_exchanges"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="₹19K"
+                        android:textColor="@color/app_black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:alpha="0.4"
+                        android:text="total exchanges" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/upcoming_paybacks"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="₹983"
+                        android:textColor="@color/app_black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:alpha="0.4"
+                        android:text="upcoming paybacks" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/upcoming_dues"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="₹123"
+                        android:textColor="@color/app_black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:alpha="0.4"
+                        android:text="upcoming dues" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/upcoming_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/money_details"
+            android:alpha="0.5"
+            android:padding="15dp"
+            android:text="UPCOMING"
+            android:textColor="@color/app_black"
+            android:textSize="12sp" />
+
+            <RelativeLayout
+                android:layout_below="@+id/upcoming_text"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="@drawable/user_btn_layout"
+                android:padding="10dp"
+                android:backgroundTint="@color/white">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/friend_image"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:src="@mipmap/ae"/>
+
+                <TextView
+                    android:id="@+id/friend_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_toRightOf="@+id/friend_image"
+                    android:text="Re:Pragati"
+                    android:textColor="@color/app_black"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="last interacted: 7d ago"
+                    android:layout_below="@+id/friend_name"
+                    android:layout_toEndOf="@+id/friend_image"
+                    android:layout_marginStart="10dp" />
+
+
+                <TextView
+                    android:id="@+id/friend_due_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="10dp"
+                    android:text="₹87"
+                    android:textColor="@color/app_black"
+                    android:textSize="22sp" />
+
+
+            </RelativeLayout>
+
+
+
+        <include
+            layout="@layout/user_bottom_bar"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

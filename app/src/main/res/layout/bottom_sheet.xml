@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sheet"
+    android:layout_width="match_parent"
+    android:layout_height="400dp"
+    android:paddingStart="@dimen/leftpadding"
+    android:paddingEnd="@dimen/rightpadding"
+    android:paddingTop="10dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    android:background="@drawable/bottomsheet_shape_expanded">
+
+
+    <LinearLayout
+        android:id="@+id/full_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.5"
+                    android:paddingBottom="15dp"
+                    android:text="YOUR ACCOUNT"
+                    android:paddingTop="10dp"
+                    android:textColor="@color/app_black"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:id="@+id/bottom_sheet_up_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+
+                    android:paddingTop="-10dp"
+                    android:src="@drawable/arrow_up_24"
+                    android:visibility="invisible" />
+
+
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/total_exchanges"
+                    android:layout_width="90dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="₹1.2L"
+                        android:textStyle="bold"
+                        android:textColor="@color/app_black"
+                        android:textSize="22sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="total exchanges"
+                        android:alpha="0.4"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/upcoming_paybacks"
+                    android:layout_width="90dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="₹129"
+                        android:textStyle="bold"
+                        android:textColor="@color/app_black"
+                        android:textSize="22sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="upcoming paybacks"
+                        android:alpha="0.4"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/upcoming_dues"
+                    android:layout_width="90dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="₹4632"
+                        android:textStyle="bold"
+                        android:textColor="@color/app_black"
+                        android:textSize="22sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="upcoming dues"
+                        android:alpha="0.4"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/return_receive"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:background="@drawable/return_recieve_shape"
+                android:alpha="0.8">
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/return_receive_tab"
+                    android:layout_width="140dp"
+                    android:layout_height="30dp"
+                    android:layout_marginBottom="10dp"
+                    app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+                    app:tabIndicatorColor="@color/app_black"
+                    app:tabIndicatorFullWidth="false"
+                    app:tabTextColor="@color/app_black"
+                    app:tabIndicatorHeight="2dp"/>
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/return_receive_viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+
+
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+    </LinearLayout>
+
+</FrameLayout>
