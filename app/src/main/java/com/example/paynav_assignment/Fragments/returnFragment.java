@@ -1,27 +1,17 @@
 package com.example.paynav_assignment.Fragments;
 
-import android.content.Context;
 import android.os.Bundle;
 
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.ListFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import com.example.paynav_assignment.Adapters.FriendlistAdapter;
 import com.example.paynav_assignment.R;
 
-import java.util.List;
-
 public class returnFragment extends Fragment {
-
-    FriendlistAdapter friendlistAdapter;
-    ListView friend_listView;
-
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -62,13 +52,6 @@ public class returnFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
 
-            String[] friend_names = new String[]{
-                    "Ananya Rao","Rajashi Prakash"
-                    ,"Harshada Nikam","John Born"
-            };
-
-            friend_listView = getActivity().findViewById(R.id.friend_listview);
-            friend_listView.setAdapter(friendlistAdapter = new FriendlistAdapter(getContext(), R.layout.friends_list_item, friend_names));
 
         }
     }

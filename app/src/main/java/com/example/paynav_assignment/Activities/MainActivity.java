@@ -7,19 +7,15 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager2.widget.ViewPager2;
 
-import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.RelativeLayout;
 
 import static com.example.paynav_assignment.Adapters.Freq_grid_adapter.photos;
@@ -27,15 +23,11 @@ import static com.example.paynav_assignment.Adapters.Freq_grid_adapter.bottomshe
 
 
 import com.example.paynav_assignment.Adapters.Freq_grid_adapter;
-import com.example.paynav_assignment.Adapters.FriendlistAdapter;
 import com.example.paynav_assignment.Adapters.Recents_grid;
 import com.example.paynav_assignment.Adapters.ReturnReceiveAdapter;
-import com.example.paynav_assignment.Classes.User;
 import com.example.paynav_assignment.R;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.tabs.TabLayout;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -131,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
 
 
             }
-        }, 10);
+        }, 20);
 
 
 
