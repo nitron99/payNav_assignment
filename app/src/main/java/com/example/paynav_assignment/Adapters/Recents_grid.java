@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.paynav_assignment.Activities.UserDetailActivity;
 import com.example.paynav_assignment.R;
 
@@ -63,11 +64,18 @@ public class Recents_grid extends BaseAdapter {
 
         //imageView.setImageResource(R.drawable.ic_launcher_foreground);
 
+        Glide
+                .with(context)
+                .load(photos[i])
+                .into(imageView);
+
+
+
         textView.setText(names[i]);
         textView.setTextColor(Color.WHITE);
-        imageView.setImageResource(photos[i]);
+        //imageView.setImageResource(photos[i]);
 
-        imageView.setOnClickListener(new View.OnClickListener() {
+        view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, UserDetailActivity.class);

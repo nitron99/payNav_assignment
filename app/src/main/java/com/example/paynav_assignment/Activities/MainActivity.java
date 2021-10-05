@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -60,9 +61,10 @@ public class MainActivity extends AppCompatActivity {
 
         initalize();
 
-        return_receive_veiwpager();
+        return_receive_viewpager();
 
         bottomSheet();
+
 
     }
 
@@ -95,8 +97,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void bottomSheet() {
         View sheet = findViewById(R.id.sheet);
-        Drawable drawable = getResources().getDrawable(R.drawable.bottomsheet_shape_collapsed);
-        Drawable drawable1 = getResources().getDrawable(R.drawable.bottomsheet_shape_expanded);
+        Drawable drawable = ResourcesCompat.getDrawable(getResources(), R.drawable.bottomsheet_shape_collapsed, null);
+        Drawable drawable1 = ResourcesCompat.getDrawable(getResources(), R.drawable.bottomsheet_shape_expanded, null);
+        //Drawable drawable = getResources().getDrawable(R.drawable.bottomsheet_shape_collapsed);
+        //Drawable drawable1 = getResources().getDrawable(R.drawable.bottomsheet_shape_expanded);
 
 
         bottomSheetBehavior = BottomSheetBehavior.from(sheet);
@@ -116,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                int height = main.getHeight()- (linearLayout.getTop() + (linearLayout.getHeight()/2)) ;
+                int height = main.getHeight() - (linearLayout.getTop() + (linearLayout.getHeight()/2)) ;
                 ViewGroup.LayoutParams params = sheet.getLayoutParams();
                 // Changes the height and width to the specified *pixels*
                 params.height = height;
@@ -129,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        bottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
+        bottomSheetBehavior.addBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
             public void onStateChanged(@NonNull View bottomSheet, int newState) {
                 if(newState == BottomSheetBehavior.STATE_COLLAPSED){
@@ -157,13 +161,29 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        frequently_contact_grid = findViewById(R.id.frequently_contact_grid);
-        frequently_contact_grid.setAdapter(freq_grid_adapter = new Freq_grid_adapter(this));
+
+        Handler handler1 = new Handler();
+        handler1.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                frequently_contact_grid = findViewById(R.id.frequently_contact_grid);
+                frequently_contact_grid.setAdapter(freq_grid_adapter = new Freq_grid_adapter(getApplicationContext()));
+
+                recents_grid = findViewById(R.id.recents_grid);
+                recents_grid.setAdapter(new Recents_grid(getApplicationContext()));
+
+
+            }
+        }, 50);
+//        frequently_contact_grid = findViewById(R.id.frequently_contact_grid);
+//        frequently_contact_grid.setAdapter(freq_grid_adapter = new Freq_grid_adapter(this));
+//
+//        recents_grid = findViewById(R.id.recents_grid);
+//        recents_grid.setAdapter(new Recents_grid(this));
     }
 
-    private void return_receive_veiwpager() {
-        recents_grid = findViewById(R.id.recents_grid);
-        recents_grid.setAdapter(new Recents_grid(this));
+    private void return_receive_viewpager() {
+
 
         tabLayout = findViewById(R.id.return_receive_tab);
         viewPager2 = findViewById(R.id.return_receive_viewpager);
